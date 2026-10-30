@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>For my Steyy 🦋</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fff4ec;--bg2:#fbe3e3;--ink:#4a1a28;--soft:#7d4a58;--accent:#8a2c46;--rose:#b76e79;--card:rgba(255,255,255,.62);--line:rgba(183,110,121,.35);
+  --serif:"Cormorant Garamond",Georgia,"Times New Roman",serif;--sans:"Jost",system-ui,-apple-system,"Segoe UI",sans-serif;
+  box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#2a0e19;--bg2:#3b1423;--ink:#fbe9e6;--soft:#e3bfc3;--accent:#f0a9b6;--rose:#d9959f;--card:rgba(255,235,235,.07);--line:rgba(217,149,159,.35)}}
+:root[data-theme="dark"]{--bg:#2a0e19;--bg2:#3b1423;--ink:#fbe9e6;--soft:#e3bfc3;--accent:#f0a9b6;--rose:#d9959f;--card:rgba(255,235,235,.07);--line:rgba(217,149,159,.35)}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:300 1.05rem/1.7 var(--sans);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:var(--serif);font-weight:500;line-height:1.15;margin:0}
+p{margin:0}
+button{font:inherit;color:inherit;cursor:pointer;border:0;background:none}
+:focus-visible{outline:2px solid var(--accent);outline-offset:4px;border-radius:12px}
+[hidden]{display:none!important}
+section{position:relative;padding:5.5rem 1.4rem;max-width:960px;margin:0 auto}
+.wrap{max-width:640px;margin:0 auto}
+h2{font-size:clamp(2rem,6.5vw,3rem);text-align:center;margin-bottom:.8rem}
+.sub{text-align:center;color:var(--soft);margin-bottom:2.6rem;font-family:var(--serif);font-style:italic;font-size:1.25rem}
+
+/* ambient petals */
+#petals{position:fixed;inset:0;pointer-events:none;z-index:1;overflow:hidden}
+.petal{position:absolute;top:-8vh;width:12px;height:16px;border-radius:70% 0 70% 0;background:linear-gradient(135deg,#f6b9c3,#d9808f);opacity:.55;animation:fall var(--d) linear var(--w) infinite}
+@keyframes fall{0%{transform:translate3d(0,0,0) rotate(0)}50%{transform:translate3d(var(--x),55vh,0) rotate(200deg)}100%{transform:translate3d(calc(var(--x)*-.6),112vh,0) rotate(420deg)}}
+main,#welcome{position:relative;z-index:2}
+
+/* welcome */
+#welcome{position:fixed;inset:0;z-index:50;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem;background:radial-gradient(ellipse at 50% 30%,var(--bg2),var(--bg) 70%);transition:opacity 1s ease,transform 1s ease}
+#welcome.gone{opacity:0;transform:scale(1.06);pointer-events:none}
+#welcome h1{font-size:clamp(2.6rem,10vw,5rem);font-style:italic;animation:rise 1.6s ease both}
+#welcome p.t{font-family:var(--serif);font-size:clamp(1.2rem,4.5vw,1.6rem);color:var(--soft);margin:1.2rem 0 2.4rem;animation:rise 1.6s .5s ease both}
+.heart-mini{width:54px;height:54px;margin-bottom:1.6rem;animation:beat 2.4s ease-in-out infinite,rise 1.4s ease both;filter:drop-shadow(0 0 14px rgba(200,70,100,.45))}
+@keyframes rise{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes beat{0%,100%{transform:scale(1)}15%{transform:scale(1.12)}30%{transform:scale(1)}45%{transform:scale(1.08)}}
+.glow{position:relative;padding:1rem 2.4rem;border-radius:999px;color:#fff;background:linear-gradient(135deg,#a63a57,#7b2139);font-family:var(--serif);font-size:1.3rem;font-weight:500;letter-spacing:.02em;box-shadow:0 0 0 0 rgba(200,90,120,.5),0 10px 30px rgba(122,33,57,.35);animation:pulse 2.8s ease-in-out infinite,rise 1.6s 1s ease both;transition:transform .3s}
+.glow:hover{transform:translateY(-2px)}
+.glow:active{transform:scale(.98)}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(200,90,120,.45),0 10px 30px rgba(122,33,57,.35)}50%{box-shadow:0 0 0 14px rgba(200,90,120,0),0 10px 34px rgba(122,33,57,.45)}}
+.note{margin-top:1.8rem;font-size:.9rem;color:var(--soft);animation:rise 1.6s 1.4s ease both}
+.burst{position:fixed;z-index:60;pointer-events:none;font-size:1.2rem;animation:up 1.6s ease-out forwards}
+@keyframes up{to{transform:translate(var(--bx),-60vh) scale(1.4);opacity:0}}
+
+/* hero line */
+.intro{text-align:center;min-height:60vh;display:flex;flex-direction:column;justify-content:center;align-items:center}
+.intro h2{font-style:italic;font-size:clamp(2.4rem,9vw,4.2rem)}
+.hint{color:var(--soft);margin-top:1rem}
+
+/* envelope + letter */
+.env{display:block;margin:0 auto;width:min(86vw,360px);aspect-ratio:3/2;position:relative;perspective:900px;filter:drop-shadow(0 16px 24px rgba(110,30,55,.25))}
+.env .back,.env .front{position:absolute;inset:0;border-radius:8px}
+.env .back{background:linear-gradient(160deg,#e9b7bd,#d3939f)}
+.env .front{background:linear-gradient(160deg,#f4cdd2,#e3a2ac);clip-path:polygon(0 0,50% 58%,100% 0,100% 100%,0 100%);top:0}
+.env .flap{position:absolute;left:0;right:0;top:0;height:60%;background:linear-gradient(180deg,#d98e9b,#e8b0b8);clip-path:polygon(0 0,100% 0,50% 100%);transform-origin:top;transition:transform .9s ease,z-index 0s .45s;z-index:3}
+.env .seal{position:absolute;left:50%;top:50%;width:46px;height:46px;margin:-23px 0 0 -23px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#b8405f,#7b2139);z-index:4;display:grid;place-items:center;color:#ffd9df;font-size:1.2rem;transition:opacity .4s}
+.env.open .flap{transform:rotateX(180deg);z-index:1}
+.env.open .seal{opacity:0}
+.env-label{text-align:center;margin-top:1.2rem;color:var(--soft);font-family:var(--serif);font-style:italic;font-size:1.2rem}
+.sheet{display:grid;grid-template-rows:0fr;transition:grid-template-rows 1.2s ease}
+.sheet>div{overflow:hidden}
+.sheet.open{grid-template-rows:1fr}
+.paper{margin:2rem auto 0;max-width:620px;padding:2.4rem 1.7rem;border-radius:6px;background:linear-gradient(180deg,#fffaf3,#fff1e6);color:#4a1a28;box-shadow:0 20px 50px rgba(110,30,55,.22);border:1px solid rgba(183,110,121,.3)}
+.paper p{font-family:var(--serif);font-size:clamp(1.2rem,4.2vw,1.45rem);line-height:1.6;margin-bottom:1.15rem;opacity:0;transform:translateY(10px);transition:opacity 1s ease,transform 1s ease;transition-delay:calc(var(--i)*.55s + .6s)}
+.sheet.open .paper p{opacity:1;transform:none}
+.paper .name{font-style:italic;font-size:1.6rem}
+.paper .sign{text-align:right;font-style:italic;margin-bottom:0}
+
+/* little things */
+.cards{display:grid;gap:1.1rem;grid-template-columns:1fr}
+@media(min-width:680px){.cards{grid-template-columns:1fr 1fr}}
+.card{position:relative;padding:1.8rem 1.5rem 1.6rem;border-radius:18px;background:var(--card);border:1px solid var(--line);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);font-family:var(--serif);font-size:1.35rem;line-height:1.4;opacity:0;transform:translateY(22px) scale(.98);transition:opacity .9s ease,transform .9s ease,box-shadow .4s,border-color .4s}
+.card.in{opacity:1;transform:none}
+.card:hover{transform:translateY(-4px);box-shadow:0 14px 34px rgba(138,44,70,.16);border-color:var(--rose)}
+.card svg{width:18px;height:18px;display:block;margin-bottom:.8rem;fill:var(--rose);transition:transform .4s}
+.card:hover svg{transform:scale(1.3) rotate(-8deg)}
+
+/* garden */
+.garden{position:relative;border-radius:28px;padding:2rem 1rem 0;overflow:hidden;background:linear-gradient(180deg,#2b1030 0%,#4a1b3d 55%,#6b2a4a 100%);color:#fbe9e6;min-height:430px;display:flex;flex-direction:column}
+.stars{position:absolute;inset:0;pointer-events:none}
+.stars i{position:absolute;width:2px;height:2px;border-radius:50%;background:#fff;opacity:.2;animation:tw var(--t) ease-in-out var(--dl) infinite}
+@keyframes tw{50%{opacity:.95;transform:scale(1.8)}}
+.msg{position:relative;z-index:2;min-height:7.5rem;text-align:center;font-family:var(--serif);font-style:italic;font-size:clamp(1.35rem,5vw,1.8rem);line-height:1.35;display:grid;place-items:center;padding:0 .6rem;max-width:520px;margin:0 auto}
+.msg span{display:block;animation:rise .9s ease both}
+.beds{position:relative;z-index:2;display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-end;gap:0 .4rem;margin-top:auto;padding-bottom:0}
+.bloom{width:88px;display:flex;flex-direction:column;align-items:center;transform-origin:bottom;animation:sway 5s ease-in-out var(--dl) infinite alternate}
+@keyframes sway{from{transform:rotate(-2.5deg)}to{transform:rotate(2.5deg)}}
+.fl{position:relative;width:76px;height:76px;border-radius:50%;transition:transform .35s,filter .35s}
+.fl:hover,.fl:focus-visible{transform:scale(1.1)}
+.fl.on{filter:drop-shadow(0 0 16px var(--c))}
+.fl i{position:absolute;left:50%;top:50%;width:26px;height:38px;margin:-38px 0 0 -13px;border-radius:50% 50% 45% 45%;background:radial-gradient(circle at 50% 80%,var(--c2),var(--c));transform-origin:50% 100%;transform:rotate(var(--r));opacity:.95}
+.fl b{position:absolute;left:50%;top:50%;width:20px;height:20px;margin:-10px 0 0 -10px;border-radius:50%;background:radial-gradient(circle,#fff3c4,#e9b96a)}
+.stem{width:3px;background:linear-gradient(#4f8b5e,#2d5a3b);border-radius:2px;height:var(--h)}
+.ground{height:34px;width:calc(100% + 2rem);margin:0 -1rem;position:relative;z-index:2;background:linear-gradient(#2b4a34,#1c3324)}
+.bfly{position:absolute;z-index:3;font-size:1.4rem;animation:flit var(--d) ease-in-out infinite alternate;pointer-events:none;opacity:.9}
+@keyframes flit{from{transform:translate(0,0) rotate(-8deg)}to{transform:translate(var(--fx),var(--fy)) rotate(10deg)}}
+.tap{text-align:center;position:relative;z-index:2;color:#e8c3cc;font-size:.95rem;margin-bottom:1rem}
+
+/* final */
+#final{max-width:none;margin:0;padding:6rem 1.4rem 7rem;background:linear-gradient(180deg,var(--bg) 0,#2a0e2e 18%,#150a24 100%);color:#fbe9e6;text-align:center;overflow:hidden;min-height:100vh}
+#final .stars i{background:#fff6dc}
+#final .in{position:relative;z-index:2;max-width:620px;margin:0 auto}
+.bigheart{width:clamp(110px,30vw,150px);margin:0 auto 1.6rem;display:block;animation:beat 2.8s ease-in-out infinite;filter:drop-shadow(0 0 26px rgba(255,110,150,.6))}
+#final h2{font-style:italic;font-size:clamp(2.4rem,9vw,3.8rem);color:#fff}
+#final .pr{font-family:var(--serif);font-size:clamp(1.3rem,4.6vw,1.7rem);line-height:1.5;margin:1.4rem 0 2.4rem;color:#f6dadd}
+#final .q{font-family:var(--serif);font-style:italic;font-size:clamp(1.5rem,5.5vw,2rem);margin-bottom:1.6rem;color:#fff}
+.btns{display:flex;flex-wrap:wrap;gap:.9rem;justify-content:center}
+.btn{padding:.95rem 1.8rem;border-radius:999px;font-family:var(--serif);font-size:1.25rem;font-weight:500;border:1px solid rgba(255,214,222,.55);color:#fff;background:rgba(255,255,255,.07);transition:background .3s,transform .3s,box-shadow .3s}
+.btn:hover{background:rgba(255,255,255,.16);transform:translateY(-2px);box-shadow:0 0 22px rgba(255,150,175,.35)}
+.btn[aria-pressed="true"]{background:rgba(255,190,205,.22);border-color:#ffd0da}
+.reply{min-height:6rem;margin-top:2rem;font-family:var(--serif);font-size:clamp(1.3rem,4.6vw,1.65rem);line-height:1.5;color:#ffe3e8}
+.reply span{display:block;animation:rise 1s ease both}
+.foot{margin-top:3rem;font-size:.85rem;color:#c9a6b4}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition-duration:.01ms!important;transition-delay:0s!important;scroll-behavior:auto!important}
+  .card,.paper p{opacity:1!important;transform:none!important}
+  #petals{display:none}
+}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="hrt" viewBox="0 0 32 29"><path d="M23.6 0c-3.4 0-6.3 2.7-7.6 5.6C14.7 2.7 11.8 0 8.4 0 3.8 0 0 3.8 0 8.4c0 9.4 9.5 11.9 16 19.2 6.100-7.300 16-9.800 16-19.200C32 3.800 28.200 0 23.600 0z"/></symbol>
+<linearGradient id="hg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff8fa9"/><stop offset="1" stop-color="#b8294f"/></linearGradient>
+</defs></svg>
+
+<div id="petals" aria-hidden="true"></div>
+
+<div id="welcome">
+  <svg class="heart-mini" viewBox="0 0 32 29" aria-hidden="true"><use href="#hrt" fill="url(#hg)"/></svg>
+  <h1>For my Steyy 🦋</h1>
+  <p class="t">There’s something my heart wants to tell you…</p>
+  <button class="glow" id="open" type="button">Open My Heart</button>
+  <p class="note">Made with love, especially for you.</p>
+</div>
+
+<main id="main" hidden>
+  <section class="intro" id="top">
+    <h2>Steyy,<br>this one is for you.</h2>
+    <p class="hint">Take your time. There’s no hurry here.</p>
+  </section>
+
+  <section id="letter">
+    <div class="wrap">
+      <h2>A letter</h2>
+      <p class="sub">Tap the seal to open it</p>
+      <button class="env" id="env" type="button" aria-expanded="false" aria-controls="sheet" aria-label="Open the letter">
+        <span class="back"></span><span class="front"></span><span class="flap"></span><span class="seal">♥</span>
+      </button>
+      <div class="sheet" id="sheet"><div><article class="paper" aria-label="Letter">
+        <p class="name" style="--i:0">My Steyy,</p>
+        <p style="--i:1">I’ve been thinking about my behaviour, and I wanted to do something special to tell you something that I should never leave unsaid.</p>
+        <p style="--i:2">I’m sorry for the moments when my behaviour may have hurt you, made you feel bad, or made you question how much you mean to me. You deserve kindness, patience, understanding, and respect from me.</p>
+        <p style="--i:3">I know that saying sorry is easy, but what matters is how I treat you afterwards. I don’t want this apology to be just beautiful words on a screen. I want to learn from my mistakes and show you through my actions that your feelings matter to me.</p>
+        <p style="--i:4">You are someone truly special to me, Steyy. I love the little things about you, the way we talk, the moments we share, and the happiness you bring into my life.</p>
+        <p style="--i:5">I’m not asking you to forget how you felt or to forgive me immediately. I just want you to know that I’m genuinely sorry, that I’m listening, and that I want to do better.</p>
+        <p style="--i:6">You deserve a love that feels safe, gentle, honest, and consistent.</p>
+        <p style="--i:7">I’m sorry, my girl. ❤️</p>
+        <p class="sign" style="--i:8">Always with love,<br>Jeff ♥️</p>
+      </article></div></div>
+    </div>
+  </section>
+
+  <section id="little">
+    <h2>The little things I love about you</h2>
+    <p class="sub">Some things I don’t say often enough</p>
+    <div class="cards" id="cards"></div>
+  </section>
+
+  <section id="gardensec">
+    <h2>A small garden for you</h2>
+    <p class="sub">Tap a flower</p>
+    <div class="garden" id="garden">
+      <div class="stars" aria-hidden="true"></div>
+      <div class="msg" id="gmsg" aria-live="polite"><span>Each flower holds something I want you to hear.</span></div>
+      <div class="beds" id="beds" role="group" aria-label="Flowers, each reveals a message"></div>
+      <div class="ground" aria-hidden="true"></div>
+    </div>
+  </section>
+
+  <section id="final">
+    <div class="stars" aria-hidden="true"></div>
+    <div class="in">
+      <svg class="bigheart" viewBox="0 0 32 29" aria-hidden="true"><use href="#hrt" fill="url(#hg)"/></svg>
+      <h2>I’m sorry, Steyy. ❤️</h2>
+      <p class="pr">I’m not promising to be perfect. I’m promising to listen, learn, and make a real effort to treat your heart with care.</p>
+      <p class="q">Can I make things right, one little step at a time?</p>
+      <div class="btns">
+        <button class="btn" id="talk" type="button" aria-pressed="false">Let’s talk ❤️</button>
+        <button class="btn" id="time" type="button" aria-pressed="false">I need a little time 🤍</button>
+      </div>
+      <div class="reply" id="reply" aria-live="polite"></div>
+      <p class="foot">Nothing here is saved or sent anywhere. It’s only for you.</p>
+    </div>
+  </section>
+</main>
+
+<script>
+(function(){
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var $=function(s){return document.querySelector(s)};
+  function el(t,c,h){var e=document.createElement(t);if(c)e.className=c;if(h)e.innerHTML=h;return e}
+
+  // petals
+  var pw=$('#petals');
+  if(!reduce){for(var i=0;i<14;i++){var p=el('i','petal');p.style.left=(Math.random()*100)+'%';p.style.setProperty('--d',(14+Math.random()*12)+'s');p.style.setProperty('--w',(-Math.random()*20)+'s');p.style.setProperty('--x',(Math.random()*120-60)+'px');p.style.transform='scale('+(0.7+Math.random()*0.8)+')';pw.appendChild(p)}}
+
+  // stars
+  document.querySelectorAll('.stars').forEach(function(s){
+    var n=s.parentNode.id==='final'?70:38;
+    for(var i=0;i<n;i++){var d=el('i');d.style.left=Math.random()*100+'%';d.style.top=Math.random()*100+'%';d.style.setProperty('--t',(2+Math.random()*4)+'s');d.style.setProperty('--dl',(-Math.random()*5)+'s');s.appendChild(d)}
+  });
+
+  // open
+  var welcome=$('#welcome'),main=$('#main');
+  $('#open').addEventListener('click',function(){
+    if(!reduce){for(var i=0;i<14;i++){(function(i){var b=el('span','burst',i%3===0?'🦋':'♥');b.style.left=(40+Math.random()*20)+'vw';b.style.top='62vh';b.style.color='#c0405f';b.style.setProperty('--bx',(Math.random()*200-100)+'px');b.style.animationDelay=(i*0.04)+'s';document.body.appendChild(b);setTimeout(function(){b.remove()},2000)})(i)}}
+    main.hidden=false;welcome.classList.add('gone');window.scrollTo(0,0);
+    setTimeout(function(){welcome.hidden=true;$('#env').focus({preventScroll:true})},reduce?50:1000);
+  });
+
+  // envelope
+  var env=$('#env'),sheet=$('#sheet');
+  env.addEventListener('click',function(){
+    var o=!env.classList.contains('open');
+    env.classList.toggle('open',o);sheet.classList.toggle('open',o);
+    env.setAttribute('aria-expanded',o);env.setAttribute('aria-label',o?'Close the letter':'Open the letter');
+    if(o&&!reduce)setTimeout(function(){sheet.scrollIntoView({behavior:'smooth',block:'start'})},500);
+  });
+
+  // cards
+  var things=['Your smile makes ordinary moments feel special.','I love the way we can talk and lose track of time.','The little moments with you mean more than you realize.','I love getting to know you more every day.','You make me want to become a more thoughtful and caring person.','You are not someone I want to take for granted.'];
+  var cw=$('#cards'),io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var c=e.target;setTimeout(function(){c.classList.add('in')},(c._i%2)*180);io.unobserve(c)}})},{threshold:.25});
+  things.forEach(function(t,i){var c=el('div','card','<svg viewBox="0 0 32 29" aria-hidden="true"><use href="#hrt"/></svg>'+t);c._i=i;cw.appendChild(c);io.observe(c)});
+
+  // garden
+  var msgs=['You matter to me more than I always know how to express.','Your feelings deserve to be heard.','I want my actions to match my words.','Thank you for being you.','I’m still learning, and I want to keep growing.'];
+  var cols=[['#f4a3b5','#e0627f'],['#ffd1b8','#f08a8a'],['#e9b7ff','#b66ad9'],['#fff0b8','#f0b95a'],['#ffc2dc','#e0558f']];
+  var hs=[70,110,50,95,80],beds=$('#beds'),g=$('#gmsg'),flowers=[];
+  msgs.forEach(function(m,i){
+    var w=el('div','bloom');w.style.setProperty('--dl',(-i*0.9)+'s');
+    var b=el('button','fl');b.type='button';b.setAttribute('aria-label','Flower '+(i+1)+' of '+msgs.length+'. Tap to read its message.');
+    b.style.setProperty('--c',cols[i][1]);b.style.setProperty('--c2',cols[i][0]);
+    for(var k=0;k<6;k++){var pt=el('i');pt.style.setProperty('--r',(k*60)+'deg');b.appendChild(pt)}
+    b.appendChild(el('b'));
+    var st=el('div','stem');st.style.setProperty('--h',hs[i]+'px');
+    w.appendChild(b);w.appendChild(st);beds.appendChild(w);flowers.push(b);
+    b.addEventListener('click',function(){
+      flowers.forEach(function(f){f.classList.remove('on')});b.classList.add('on');
+      g.innerHTML='';g.appendChild(el('span','','“'+m+'”'));
+    });
+  });
+  var gd=$('#garden');
+  if(!reduce){for(var j=0;j<3;j++){var bf=el('span','bfly','🦋');bf.style.left=(15+j*30)+'%';bf.style.top=(30+j*14)+'%';bf.style.setProperty('--d',(6+j*2)+'s');bf.style.setProperty('--fx',(j%2?-60:70)+'px');bf.style.setProperty('--fy',(-30-j*12)+'px');bf.setAttribute('aria-hidden','true');gd.appendChild(bf)}}
+
+  // final choices
+  var rp=$('#reply'),tk=$('#talk'),tm=$('#time');
+  function show(btn,other,text){btn.setAttribute('aria-pressed','true');other.setAttribute('aria-pressed','false');rp.innerHTML='';rp.appendChild(el('span','',text))}
+  tk.addEventListener('click',function(){show(tk,tm,'Whenever you feel comfortable, I’d love to talk. No rush, and no pressure. I’ll listen first, my Steyy.')});
+  tm.addEventListener('click',function(){show(tm,tk,'Take all the time you need, my Steyy. I respect your feelings, and I’m here when you’re ready.')});
+})();
+</script>
+</body>
+</html>
